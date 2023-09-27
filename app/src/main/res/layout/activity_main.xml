@@ -6,13 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:background="@color/header"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Bouton Menu -->
+    <ImageButton
+        android:id="@+id/btn_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_menu"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:padding="8dp" />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        />
+        <!-- Bouton Profil avec une image -->
+        <ImageButton
+            android:id="@+id/btn_profil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_profil"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
