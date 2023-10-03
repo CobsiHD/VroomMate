@@ -1,0 +1,11 @@
+
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Fond blanc -->
+    <item android:drawable="@android:color/white" />
+
+<!-- Image PNG (foreground) -->
+    <item
+        android:id="@+id/ic_foreground"
+        android:drawable="@drawable/vroommate"
+        android:gravity="center" />
+    </layer-list>
