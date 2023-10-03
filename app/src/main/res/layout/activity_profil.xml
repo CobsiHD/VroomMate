@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,44 +13,129 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <EditText
-            android:id="@+id/editTextName"
+        <!-- Header avec Image de Profil -->
+        <!-- Header avec Image de Profil et Nom & Prénom -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <EditText
-            android:id="@+id/editTextSurname"
+            <ImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                tools:src="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nom : Findus"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/textViewSurname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prénom : CroustiBapt"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Séparateur avec texte Profil -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Prénom"/>
+            android:text="Profil"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginVertical="8dp"/>
 
-        <ImageView
-            android:id="@+id/imageViewCar"
+        <!-- ImageView de la Voiture avec "+" -->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/ic_car_placeholder"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp">
 
-        <Button
-            android:id="@+id/buttonChooseImage"
+            <ImageView
+                android:id="@+id/imageViewCar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <!-- Spécifications Techniques -->
+        <EditText
+            android:id="@+id/editTextBrand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choisir une image"/>
+            android:hint="Marque"/>
 
         <EditText
-            android:id="@+id/editTextCarSpec"
+            android:id="@+id/editTextModel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Spécifications de la voiture"
-            android:layout_marginTop="16dp"/>
+            android:hint="Modèle"/>
 
+        <EditText
+            android:id="@+id/editTextEngine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Moteur"/>
+
+        <EditText
+            android:id="@+id/editTextPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Puissance"/>
+
+        <EditText
+            android:id="@+id/editTextCouple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Couple"/>
+
+        <EditText
+            android:id="@+id/editText0100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0 - 100km/h"/>
+        <EditText
+            android:id="@+id/editTextRPM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Max RPM"/>
+        <EditText
+            android:id="@+id/editTextSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vitesse Max"/>
+
+
+        <!-- Bouton Sauvegarder -->
         <Button
             android:id="@+id/buttonSaveProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enregistrer"
+            android:text="Sauvegarder le Profil"
             android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>
