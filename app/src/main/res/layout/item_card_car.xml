@@ -1,19 +1,54 @@
+
+
+
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp"
+android:background="#F5F5F5">
 
-    <TextView
-        android:id="@+id/carModel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/model_placeholder"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!-- Titre de la voiture -->
+<TextView
+    android:id="@+id/carModel"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/model_placeholder"
+    android:textSize="24sp"
+    android:textColor="#333333"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
+<!-- Image de la voiture (à remplacer par une ImageView) -->
+<ImageView
+    android:id="@+id/carImage"
+    android:layout_width="0dp"
+    android:layout_height="200dp"
+    android:layout_marginTop="8dp"
+    android:background="#E0E0E0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/carModel" />
+
+
+<!-- Tableau des spécifications techniques -->
+<GridLayout
+    android:id="@+id/specsGrid"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:rowCount="4"
+    android:columnCount="2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/carImage">
+
+
+    <!-- Exemple de spécification -->
     <TextView
         android:id="@+id/engineDetail"
         android:layout_width="wrap_content"
@@ -23,7 +58,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carModel" />
-
     <TextView
         android:id="@+id/powerDetail"
         android:layout_width="wrap_content"
@@ -84,11 +118,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/torqueDetail" />
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="14dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"></LinearLayout>
+</GridLayout>
+
+<!-- Séparateur -->
+<View
+    android:id="@+id/separator"
+    android:layout_width="0dp"
+    android:layout_height="1dp"
+    android:layout_marginTop="16dp"
+    android:background="#CCCCCC"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/specsGrid" />
+
+<!-- Autres éléments peuvent être ajoutés ici -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

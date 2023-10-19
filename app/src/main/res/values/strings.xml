@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">VroomMate</string>
 
-    <string name="model_placeholder">Model: %1$s</string>
+    <string name="model_placeholder"> %1$s</string>
     <string name="engine_placeholder">Engine: %1$s</string>
     <string name="power_placeholder">Power: %1$s</string>
     <string name="speed_placeholder">0-100 KM/H: %1$s</string>
