@@ -1,13 +1,14 @@
 package com.example.vroommate.model
 
 data class Car(
-    val model: String,
-    val engine: String,
-    val power: String,
-    val speed: String,
-    val topSpeed: String,
-    val rpm: String,
-    val torque: String,
-    val year: Int,
-
+    val marque: String,
+    val modele: String,
+    val moteur: String,
+    val puissance : String,
+    val couple : String,
+    val acceleration :String,
+    val maxRPM : String,
+    val vMax: String,
+    val like: Boolean,
+    val image: String,
 )
