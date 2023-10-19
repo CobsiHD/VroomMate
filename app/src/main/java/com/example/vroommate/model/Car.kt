@@ -9,6 +9,5 @@ data class Car(
     val rpm: String,
     val torque: String,
     val year: Int,
-    val imageResId: Int,
-    val flagResId: Int
+
 )
