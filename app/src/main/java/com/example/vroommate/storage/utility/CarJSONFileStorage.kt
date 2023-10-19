@@ -1,17 +1,30 @@
-package com.example.vroommate.storage
+package com.example.vroommate.storage.utility
 
 import android.content.Context
 import com.example.vroommate.model.Car
 import org.json.JSONObject
-import com.example.vroommate.storage.utility.JSONFileStorage
+import com.example.vroommate.storage.utility.file.JSONFileStorage
 class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car") {
-    override fun create(modele : String, obj: Car): Car {
-        return Car(modele, obj.marque, obj.moteur, obj.puissance, obj.couple, obj.acceleration, obj.maxRPM, obj.vMax, obj.like, obj.image)
+    override fun create(id: Int, obj: Car): Car {
+        return Car(
+            id,
+            obj.modele,
+            obj.marque,
+            obj.moteur,
+            obj.puissance,
+            obj.couple,
+            obj.acceleration,
+            obj.maxRPM,
+            obj.vMax,
+            obj.like,
+            obj.image
+        )
     }
 
-    override fun objectToJson(modele : String, obj: Car): JSONObject {
+    override fun objectToJson(id: Int, obj: Car): JSONObject {
         val json = JSONObject()
-        json.put(Car.MODELE, modele)
+        json.put(Car.ID, id)
+        json.put(Car.MODELE, obj.modele)
         json.put(Car.MARQUE, obj.marque)
         json.put(Car.MOTEUR, obj.moteur)
         json.put(Car.PUISSANCE, obj.puissance)
@@ -27,6 +40,7 @@ class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car"
 
     override fun jsonToObject(json: JSONObject): Car {
         return Car(
+            json.getInt(Car.ID),
             json.getString(Car.MODELE),
             json.getString(Car.MARQUE),
             json.getString(Car.MOTEUR),
@@ -36,21 +50,9 @@ class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car"
             json.getString(Car.MAXRPM),
             json.getString(Car.VMAX),
             json.getBoolean(Car.LIKE),
-            json.getString(Car.IMAGE),
-        )
-    }
-
-}
-
-
-    override fun jsonToObject(json: JSONObject): Expense {
-        return Expense(
-            json.getInt(Expense.ID),
-            json.getString(Expense.NAME),
-            json.getInt(Expense.CATEGORY),
-            json.getString(Expense.AMOUNT),
-            json.getString(Expense.DATE),
-            json.getInt(Expense.AUTHOR)
+            json.getString(Car.IMAGE)
         )
     }
 }
+
+
