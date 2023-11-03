@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         // Liste de voitures fictives
         val cars = listOf(
-            Car("Tesla Model S", "Électrique", "762 ch", "0-100 km/h en 2,4 s", "250 km/h", "N/A", "967 Nm", 2020),
+            Car(1,"Tesla", "Model S", "Electrique", "762 ch", "967 Nm", "0-100 km/h en 2,4 s","N/A" , "250 km/h", false, "/lien image"),
             Car("BMW i8", "Hybride", "374 ch", "0-100 km/h en 4,4 s", "250 km/h", "5800 rpm", "570 Nm", 2019),
             Car("Audi e-tron", "Électrique", "408 ch", "0-100 km/h en 5,7 s", "200 km/h", "N/A", "660 Nm", 2020),
             Car("Porsche Taycan", "Électrique", "625 ch", "0-100 km/h en 4,0 s", "260 km/h", "N/A", "1050 Nm", 2020),

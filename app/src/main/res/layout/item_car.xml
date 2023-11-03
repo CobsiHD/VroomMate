@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+app:cardCornerRadius="8dp"
+app:cardElevation="4dp"
+app:cardUseCompatPadding="true"
+android:layout_margin="8dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Image de la voiture -->
+    <ImageView
+        android:id="@+id/carImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/porsche_911_gt3rs" />
+
+    <!-- Nom de la voiture -->
+    <TextView
+        android:id="@+id/carName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom de la voiture"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <!-- Marque de la voiture -->
+    <TextView
+        android:id="@+id/carBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marque de la voiture"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- Autres caractéristiques de la voiture (à ajouter selon vos besoins) -->
+    <!-- ...
+
+    <!-- Fin du layout de l'élément de voiture -->
+</LinearLayout>
+</androidx.cardview.widget.CardView>
