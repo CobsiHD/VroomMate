@@ -44,9 +44,6 @@ android:layout_margin="8dp">
         android:textSize="16sp"
         android:layout_marginTop="4dp" />
 
-    <!-- Autres caractéristiques de la voiture (à ajouter selon vos besoins) -->
-    <!-- ...
 
-    <!-- Fin du layout de l'élément de voiture -->
 </LinearLayout>
 </androidx.cardview.widget.CardView>

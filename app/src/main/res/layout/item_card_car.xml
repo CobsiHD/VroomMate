@@ -1,136 +1,138 @@
 
 
-
-
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="16dp"
-android:background="#F5F5F5">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-<!-- Titre de la voiture -->
-<TextView
-    android:id="@+id/carModel"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="@string/model_placeholder"
-    android:textSize="24sp"
-    android:textColor="#333333"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-<!-- Image de la voiture (à remplacer par une ImageView) -->
-<ImageView
-    android:id="@+id/carImage"
-    android:layout_width="0dp"
-    android:layout_height="200dp"
-    android:layout_marginTop="8dp"
-    android:background="#E0E0E0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/carModel" />
-
-
-<!-- Tableau des spécifications techniques -->
-<GridLayout
-    android:id="@+id/specsGrid"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:rowCount="4"
-    android:columnCount="2"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/carImage">
-
-
-    <!-- Exemple de spécification -->
+    <!-- Titre de la voiture -->
     <TextView
-        android:id="@+id/engineDetail"
-        android:layout_width="wrap_content"
+        android:id="@+id/marque"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/engine_placeholder"
-        android:textSize="16sp"
+        android:text="@string/model_placeholder"
+        android:textSize="28sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carModel" />
-    <TextView
-        android:id="@+id/powerDetail"
-        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Image de la voiture -->
+    <ImageView
+        android:id="@+id/carImage"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:background="#E0E0E0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/marque" />
+
+    <!-- Tableau des spécifications techniques -->
+    <GridLayout
+        android:id="@+id/specsGrid"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/power_placeholder"
-        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        android:rowCount="4"
+        android:columnCount="2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/engineDetail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carImage">
 
-    <TextView
-        android:id="@+id/speedDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/speed_placeholder"
-        android:textSize="16sp"
+
+        <!-- Exemple de spécification -->
+        <TextView
+            android:id="@+id/moteur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/engine_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/marque" />
+        <TextView
+            android:id="@+id/puissance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/power_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moteur" />
+
+        <TextView
+            android:id="@+id/acceleration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/speed_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/puissance" />
+
+        <TextView
+            android:id="@+id/vMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/topSpeed_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/acceleration" />
+
+        <TextView
+            android:id="@+id/maxRPM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/rpm_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vMax" />
+
+        <TextView
+            android:id="@+id/couple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/torque_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/maxRPM" />
+
+        <TextView
+            android:id="@+id/yearDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/year_placeholder"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/couple" />
+
+        <!-- Les spécifications techniques seront ajoutées ici -->
+
+    </GridLayout>
+
+    <!-- Séparateur -->
+    <View
+        android:id="@+id/separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#CCCCCC"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/powerDetail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/specsGrid" />
 
-    <TextView
-        android:id="@+id/topSpeedDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/topSpeed_placeholder"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/speedDetail" />
-
-    <TextView
-        android:id="@+id/rpmDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/rpm_placeholder"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topSpeedDetail" />
-
-    <TextView
-        android:id="@+id/torqueDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/torque_placeholder"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rpmDetail" />
-
-    <TextView
-        android:id="@+id/yearDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/year_placeholder"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/torqueDetail" />
-
-</GridLayout>
-
-<!-- Séparateur -->
-<View
-    android:id="@+id/separator"
-    android:layout_width="0dp"
-    android:layout_height="1dp"
-    android:layout_marginTop="16dp"
-    android:background="#CCCCCC"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/specsGrid" />
-
-<!-- Autres éléments peuvent être ajoutés ici -->
+    <!-- Autres éléments peuvent être ajoutés ici -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
