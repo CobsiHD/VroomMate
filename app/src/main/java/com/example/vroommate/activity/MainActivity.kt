@@ -9,6 +9,8 @@ import com.example.vroommate.ProfileActivity
 import com.example.vroommate.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vroommate.adapter.CarAdapter
+import com.example.vroommate.model.Car
 import com.example.vroommate.request.CarRequest
 
 
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         // Configuration du RecyclerView
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        //recyclerView.adapter = CarAdapter(cars = )
+        //recyclerView.adapter = CarAdapter()
     }
 }
 
