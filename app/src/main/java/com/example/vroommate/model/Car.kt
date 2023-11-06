@@ -11,7 +11,7 @@ data class Car(
     val maxRPM : String,
     val vMax: String,
     val like: Boolean,
-    val image: String,
+    val image : String
 ){
     companion object{
         const val ID = "id"
@@ -25,7 +25,6 @@ data class Car(
         const val VMAX = "vMax"
         const val LIKE = "like"
         const val IMAGE = "image"
-
     }
 
 }

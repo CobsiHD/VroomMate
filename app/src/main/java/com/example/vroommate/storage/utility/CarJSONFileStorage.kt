@@ -18,7 +18,7 @@ class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car"
             obj.vMax,
             obj.like,
             obj.image
-        )
+    )
     }
 
     override fun objectToJson(id: Int, obj: Car): JSONObject {
@@ -35,6 +35,7 @@ class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car"
         json.put(Car.LIKE, obj.like)
         json.put(Car.IMAGE, obj.image)
 
+
         return json
     }
 
@@ -50,8 +51,44 @@ class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car"
             json.getString(Car.MAXRPM),
             json.getString(Car.VMAX),
             json.getBoolean(Car.LIKE),
-            json.getString(Car.IMAGE)
-        )
+            json.getString(Car.IMAGE),
+
+            )
+    }
+
+
+
+
+
+
+
+
+
+    companion object {
+
+        @Volatile
+        private var instance : CarJSONFileStorage? = null
+
+
+        fun get(context: Context):CarJSONFileStorage {
+
+            if(instance != null){
+
+                return instance as CarJSONFileStorage
+            }
+            return synchronized(this){
+
+                val checkInstanceAgain = instance
+                if(checkInstanceAgain != null){
+                    checkInstanceAgain as CarJSONFileStorage
+
+                }else {
+
+                    instance = CarJSONFileStorage(context)
+                    instance as CarJSONFileStorage
+                }
+            }
+        }
     }
 }
 

@@ -7,10 +7,13 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.vroommate.activity.MainActivity
+import com.example.vroommate.model.Car
+import com.example.vroommate.storage.utility.CarJSONFileStorage
+import com.example.vroommate.storage.utility.Updatable
 import org.json.JSONObject
 
 
-class CarRequest(private val context: Context, private val updatable: MainActivity) {
+class CarRequest(private val context: Context, private val updatable: Updatable) {
 
     companion object {
 
@@ -42,8 +45,33 @@ class CarRequest(private val context: Context, private val updatable: MainActivi
 
 
     fun refresh(res: JSONObject) {
-        Log.d("REFRESH_REQUEST", res.toString())
+        val carsArray = res.getJSONArray("voitures") // Obtenez le tableau JSON de voitures
+        val cars = mutableListOf<Car>()
+
+        // Itérer à travers le tableau de voitures
+        for (i in 0 until carsArray.length()) {
+            val carJSON = carsArray.getJSONObject(i) // Obtenez l'objet JSON de voiture à l'index i
+
+            // Extraire les informations de la voiture avec des valeurs par défaut si nécessaire
+            val id = carJSON.optInt("id")
+            val marque = carJSON.optString("marque")
+            val modele = carJSON.optString("modele")
+            val moteur = carJSON.optString("moteur")
+            val puissance = carJSON.optString("puissance")
+            val couple = carJSON.optString("couple")
+            val acceleration = carJSON.optString("0_a_100_kmh", "N/A") // Valeur par défaut si non trouvé
+            val maxRPM = carJSON.optString("max_RPM", "N/A") // Utilisez une valeur par défaut si la clé "max_RPM" n'existe pas
+            val vMax = carJSON.optString("Vitesse_max", "N/A") // Valeur par défaut si non trouvé
+            val like = carJSON.optBoolean("like", false)
+            val image = carJSON.optString("image", "gtr35") // Valeur par défaut si non trouvé
+
+            // Créer un objet Car avec les informations extraites
+            val car = Car(id, marque, modele, moteur, puissance, couple, acceleration, maxRPM, vMax, like, image)
+            cars.add(car)
+        }
+        updatable.update(cars)
     }
+
 
 
 }

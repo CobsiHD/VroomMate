@@ -1,9 +1,11 @@
 package com.example.vroommate.storage.utility.file
 
 import android.content.Context
+import android.util.Log
 import org.json.JSONObject
+import java.io.File
 
-abstract class JSONFileStorage<T>(context: Context, name: String) : FileStorage<T>(context, name, ".json") {
+abstract class JSONFileStorage<T>(private val context: Context, name: String) : FileStorage<T>(context, name, ".json") {
     protected abstract fun objectToJson(id: Int, obj: T): JSONObject
     protected abstract fun jsonToObject(json: JSONObject): T
 
@@ -23,5 +25,7 @@ abstract class JSONFileStorage<T>(context: Context, name: String) : FileStorage<
         }
         return data
     }
+
+
 
 }
