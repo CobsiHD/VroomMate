@@ -59,9 +59,9 @@ class CarRequest(private val context: Context, private val updatable: Updatable)
             val moteur = carJSON.optString("moteur")
             val puissance = carJSON.optString("puissance")
             val couple = carJSON.optString("couple")
-            val acceleration = carJSON.optString("0_a_100_kmh", "N/A") // Valeur par défaut si non trouvé
-            val maxRPM = carJSON.optString("max_RPM", "N/A") // Utilisez une valeur par défaut si la clé "max_RPM" n'existe pas
-            val vMax = carJSON.optString("Vitesse_max", "N/A") // Valeur par défaut si non trouvé
+            val acceleration = carJSON.optString("0 a 100 kmh", "N/A") // Valeur par défaut si non trouvé
+            val maxRPM = carJSON.optString("max RPM", "N/A") // Utilisez une valeur par défaut si la clé "max_RPM" n'existe pas
+            val vMax = carJSON.optString("Vitesse max", "N/A") // Valeur par défaut si non trouvé
             val like = carJSON.optBoolean("like", false)
             val image = carJSON.optString("image", "gtr35") // Valeur par défaut si non trouvé
 

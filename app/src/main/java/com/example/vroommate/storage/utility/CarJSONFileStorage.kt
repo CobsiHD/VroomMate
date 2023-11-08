@@ -4,7 +4,8 @@ import android.content.Context
 import com.example.vroommate.model.Car
 import org.json.JSONObject
 import com.example.vroommate.storage.utility.file.JSONFileStorage
-class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car") {
+class CarJSONFileStorage(context: Context): JSONFileStorage<Car>(context, "car") {
+
     override fun create(id: Int, obj: Car): Car {
         return Car(
             id,
@@ -55,6 +56,8 @@ class CarJSONFileStorage (context: Context): JSONFileStorage<Car>(context, "car"
 
             )
     }
+
+
 
 
 
